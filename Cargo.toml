@@ -1,0 +1,12 @@
+[package]
+name = "expressive-liveset"
+version = "0.1.0"
+edition = "2021"
+description = "Write Ableton Live 12 sets (.als) with MIDI clips that carry per-note pitch expression (MPE)."
+license = "MIT"
+
+[dependencies]
+flate2 = "1"
+
+[dev-dependencies]
+roxmltree = "0.20"

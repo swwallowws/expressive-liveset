@@ -1,0 +1,415 @@
+<TuningSystems>
+	<TuningSystem Id="0">
+		<NoteTunings>
+			<NoteTuning Id="0">
+				<Cents Value="0" />
+				<TuningRatio>
+					<Value>
+						<TuningRatio Id="0">
+							<Numerator Value="1" />
+							<Denominator Value="1" />
+						</TuningRatio>
+					</Value>
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="1">
+				<Cents Value="22.64151" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="2">
+				<Cents Value="45.28302" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="3">
+				<Cents Value="67.92453" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="4">
+				<Cents Value="90.56604" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="5">
+				<Cents Value="113.20755" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="6">
+				<Cents Value="135.84906" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="7">
+				<Cents Value="158.49057" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="8">
+				<Cents Value="181.13208" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="9">
+				<Cents Value="203.77359" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="10">
+				<Cents Value="226.4151" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="11">
+				<Cents Value="249.05661" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="12">
+				<Cents Value="271.69812" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="13">
+				<Cents Value="294.33963" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="14">
+				<Cents Value="316.98114" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="15">
+				<Cents Value="339.62265" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="16">
+				<Cents Value="362.26416" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="17">
+				<Cents Value="384.90567" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="18">
+				<Cents Value="407.54718" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="19">
+				<Cents Value="430.18869" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="20">
+				<Cents Value="452.8302" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="21">
+				<Cents Value="475.47171" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="22">
+				<Cents Value="498.11322" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="23">
+				<Cents Value="520.7547" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="24">
+				<Cents Value="543.39624" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="25">
+				<Cents Value="566.03772" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="26">
+				<Cents Value="588.67926" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="27">
+				<Cents Value="611.32074" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="28">
+				<Cents Value="633.96228" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="29">
+				<Cents Value="656.60376" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="30">
+				<Cents Value="679.2453" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="31">
+				<Cents Value="701.88678" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="32">
+				<Cents Value="724.52832" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="33">
+				<Cents Value="747.1698" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="34">
+				<Cents Value="769.81134" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="35">
+				<Cents Value="792.45282" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="36">
+				<Cents Value="815.09436" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="37">
+				<Cents Value="837.73584" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="38">
+				<Cents Value="860.37738" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="39">
+				<Cents Value="883.01886" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="40">
+				<Cents Value="905.6604" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="41">
+				<Cents Value="928.30188" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="42">
+				<Cents Value="950.94342" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="43">
+				<Cents Value="973.5849" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="44">
+				<Cents Value="996.22644" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="45">
+				<Cents Value="1018.86792" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="46">
+				<Cents Value="1041.5094" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="47">
+				<Cents Value="1064.151" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="48">
+				<Cents Value="1086.79248" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="49">
+				<Cents Value="1109.43396" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="50">
+				<Cents Value="1132.07544" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="51">
+				<Cents Value="1154.71704" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+			<NoteTuning Id="52">
+				<Cents Value="1177.35852" />
+				<TuningRatio>
+					<Value />
+				</TuningRatio>
+			</NoteTuning>
+		</NoteTunings>
+		<PseudoOctaveInCents Value="1200" />
+		<PseudoOctaveAsRatio>
+			<Value>
+				<TuningRatio Id="0">
+					<Numerator Value="2" />
+					<Denominator Value="1" />
+				</TuningRatio>
+			</Value>
+		</PseudoOctaveAsRatio>
+		<ReferencePitch>
+			<Octave Value="3" />
+			<NoteIndexWithinOctave Value="40" />
+			<FrequencyInHz Value="440" />
+		</ReferencePitch>
+		<DefaultReferencePitch>
+			<Octave Value="3" />
+			<NoteIndexWithinOctave Value="40" />
+			<FrequencyInHz Value="440" />
+		</DefaultReferencePitch>
+		<AllowedNoteRange>
+			<MinOctave Value="2" />
+			<MinNoteIndexWithinOctave Value="24" />
+			<MaxOctave Value="4" />
+			<MaxNoteIndexWithinOctave Value="45" />
+		</AllowedNoteRange>
+		<NoteNames>
+			<RemoteableString Id="0" Value="0" />
+			<RemoteableString Id="1" Value="1" />
+			<RemoteableString Id="2" Value="2" />
+			<RemoteableString Id="3" Value="3" />
+			<RemoteableString Id="4" Value="4" />
+			<RemoteableString Id="5" Value="5" />
+			<RemoteableString Id="6" Value="6" />
+			<RemoteableString Id="7" Value="7" />
+			<RemoteableString Id="8" Value="8" />
+			<RemoteableString Id="9" Value="9" />
+			<RemoteableString Id="10" Value="10" />
+			<RemoteableString Id="11" Value="11" />
+			<RemoteableString Id="12" Value="12" />
+			<RemoteableString Id="13" Value="13" />
+			<RemoteableString Id="14" Value="14" />
+			<RemoteableString Id="15" Value="15" />
+			<RemoteableString Id="16" Value="16" />
+			<RemoteableString Id="17" Value="17" />
+			<RemoteableString Id="18" Value="18" />
+			<RemoteableString Id="19" Value="19" />
+			<RemoteableString Id="20" Value="20" />
+			<RemoteableString Id="21" Value="21" />
+			<RemoteableString Id="22" Value="22" />
+			<RemoteableString Id="23" Value="23" />
+			<RemoteableString Id="24" Value="24" />
+			<RemoteableString Id="25" Value="25" />
+			<RemoteableString Id="26" Value="26" />
+			<RemoteableString Id="27" Value="27" />
+			<RemoteableString Id="28" Value="28" />
+			<RemoteableString Id="29" Value="29" />
+			<RemoteableString Id="30" Value="30" />
+			<RemoteableString Id="31" Value="31" />
+			<RemoteableString Id="32" Value="32" />
+			<RemoteableString Id="33" Value="33" />
+			<RemoteableString Id="34" Value="34" />
+			<RemoteableString Id="35" Value="35" />
+			<RemoteableString Id="36" Value="36" />
+			<RemoteableString Id="37" Value="37" />
+			<RemoteableString Id="38" Value="38" />
+			<RemoteableString Id="39" Value="39" />
+			<RemoteableString Id="40" Value="40" />
+			<RemoteableString Id="41" Value="41" />
+			<RemoteableString Id="42" Value="42" />
+			<RemoteableString Id="43" Value="43" />
+			<RemoteableString Id="44" Value="44" />
+			<RemoteableString Id="45" Value="45" />
+			<RemoteableString Id="46" Value="46" />
+			<RemoteableString Id="47" Value="47" />
+			<RemoteableString Id="48" Value="48" />
+			<RemoteableString Id="49" Value="49" />
+			<RemoteableString Id="50" Value="50" />
+			<RemoteableString Id="51" Value="51" />
+			<RemoteableString Id="52" Value="52" />
+		</NoteNames>
+		<TuningSystemName Value="53-EDO" />
+		<Scales />
+		<ShortDescription Value="" />
+		<TuningSystemSource Value="" />
+		<Link Value="" />
+		<LomId Value="0" />
+	</TuningSystem>
+</TuningSystems>
