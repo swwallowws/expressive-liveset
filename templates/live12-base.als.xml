@@ -1205,7 +1205,7 @@
 								<NumVisibleMacroControls Value="8" />
 								<MacroControls.0>
 									<LomId Value="0" />
-									<Manual Value="65.9960938" />
+									<Manual Value="63.5" />
 									<MidiControllerRange>
 										<Min Value="0" />
 										<Max Value="127" />
