@@ -181,6 +181,23 @@ fn default_template_writes_no_returns_groove_or_home_paths() {
     assert!(!xml.contains("/Users/"), "home-folder path in the set");
 }
 
+/// The Pitch rack's first macro (mapped across -128..+128 st) sits at its
+/// centre, so a set plays at the pitch its notes are written in. It was saved
+/// at 65.996 once, which made every set play 5 semitones sharp.
+#[test]
+fn the_pitch_macro_starts_at_zero_semitones() {
+    let xml = gunzip(&write(&one_track_set(clip(vec![note(60, 0.0, vec![])])), TEMPLATE).unwrap());
+    let d = doc(&xml);
+    for macro0 in d.descendants().filter(|n| n.has_tag_name("MacroControls.0")) {
+        let manual = macro0
+            .children()
+            .find(|n| n.has_tag_name("Manual"))
+            .and_then(|n| n.attribute("Value"))
+            .expect("macro value");
+        assert_eq!(manual, "63.5", "Pitch macro off centre: {manual}");
+    }
+}
+
 /// Ids that must be globally unique: those of `AutomationTarget`,
 /// `ModulationTarget` (any `*Target`) and `Pointee` elements. Other `Id`s are
 /// list-local indices (`<ClipSlot Id="0">`) that legitimately repeat. Sorted.
