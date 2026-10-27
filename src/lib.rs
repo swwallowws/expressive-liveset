@@ -381,19 +381,26 @@ fn replace_two_clipslotlists(block: &str, first: &str, second: &str) -> String {
 }
 
 /// Tempo-automation breakpoints (`<FloatEvent>`s): the initial tempo at Live's
-/// "before the start" sentinel time, then each change.
+/// "before the start" sentinel time, then each change as a step. Live draws a
+/// straight line between breakpoints, so each change has two at its beat: the
+/// tempo before it, then the new one.
 fn tempo_events(set: &Set) -> String {
     let mut out = format!(
         "<FloatEvent Id=\"0\" Time=\"-63072000\" Value=\"{}\" />",
         fmt(set.tempo)
     );
-    for (i, (beat, bpm)) in set.tempo_changes.iter().enumerate() {
-        out.push_str(&format!(
-            "<FloatEvent Id=\"{}\" Time=\"{}\" Value=\"{}\" />",
-            i + 1,
-            fmt(*beat),
-            fmt(*bpm)
-        ));
+    let mut before = set.tempo;
+    let mut id = 1;
+    for &(beat, bpm) in &set.tempo_changes {
+        for value in [before, bpm] {
+            out.push_str(&format!(
+                "<FloatEvent Id=\"{id}\" Time=\"{}\" Value=\"{}\" />",
+                fmt(beat),
+                fmt(value)
+            ));
+            id += 1;
+        }
+        before = bpm;
     }
     out
 }
