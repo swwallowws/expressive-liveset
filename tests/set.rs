@@ -161,7 +161,51 @@ fn tempo_is_set_and_changes_become_automation() {
     set.tempo_changes = vec![(16.0, 140.0)];
     let xml = gunzip(&write(&set, TEMPLATE).unwrap());
     assert!(xml.contains("<FloatEvent Id=\"0\" Time=\"-63072000\" Value=\"90\" />"));
-    assert!(xml.contains("<FloatEvent Id=\"1\" Time=\"16\" Value=\"140\" />"));
+    assert!(xml.contains("Time=\"16\" Value=\"140\" />"));
+}
+
+/// Live draws a straight line between tempo breakpoints, so each change needs a
+/// breakpoint holding the old tempo up to it. Without one the line runs from the
+/// start sentinel (two years before bar 1) and is already at the new tempo by bar 1.
+#[test]
+fn the_tempo_holds_until_each_change() {
+    let mut set = one_track_set(clip(vec![note(60, 0.0, vec![])]));
+    set.tempo = 94.0;
+    set.tempo_changes = vec![(300.0, 88.0), (400.0, 120.0)];
+    let xml = gunzip(&write(&set, TEMPLATE).unwrap());
+    let d = doc(&xml);
+    // the Main track's tempo envelope: the one whose target is PointeeId 8
+    let envelope = d
+        .descendants()
+        .find(|n| {
+            n.has_tag_name("AutomationEnvelope")
+                && n.descendants().any(|p| p.has_tag_name("PointeeId") && p.attribute("Value") == Some("8"))
+        })
+        .expect("a tempo envelope");
+    let events: Vec<(f64, f64)> = envelope
+        .descendants()
+        .filter(|n| n.has_tag_name("FloatEvent"))
+        .map(|n| {
+            (
+                n.attribute("Time").unwrap().parse().unwrap(),
+                n.attribute("Value").unwrap().parse().unwrap(),
+            )
+        })
+        .collect();
+    // the tempo Live plays at `beat`: a straight line between the breakpoints either side
+    let tempo_at = |beat: f64| {
+        let i = events.iter().rposition(|&(t, _)| t <= beat).unwrap();
+        match events.get(i + 1) {
+            Some(&(t1, v1)) if t1 > events[i].0 => {
+                let (t0, v0) = events[i];
+                v0 + (v1 - v0) * (beat - t0) / (t1 - t0)
+            }
+            _ => events[i].1,
+        }
+    };
+    for (beat, want) in [(0.0, 94.0), (299.9, 94.0), (300.0, 88.0), (399.9, 88.0), (400.0, 120.0)] {
+        assert!((tempo_at(beat) - want).abs() < 1e-6, "beat {beat}: {} BPM, want {want}", tempo_at(beat));
+    }
 }
 
 /// The bundled template is a clean skeleton: written sets carry no return
