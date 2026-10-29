@@ -47,14 +47,19 @@ archive repo `swwallowws/expressive-liveset-archive`.
   `git = "https://github.com/swwallowws/expressive-liveset.git"` with the
   public commit as `rev`, and no longer need `git-fetch-with-cli`.
 - [x] **Visibility.** Public.
+- [x] **A playable default kit.** `Instrument::Drums` is Live's 909 Core Kit
+  (`templates/devices/drum-kit.xml`), from a set Bengisu saved in Live 12.4 on
+  2026-10-29 and cleaned by `examples/clean_kit.py`: every absolute path
+  blanked (they named that machine's Live app, and Ableton staff folders left
+  in the kit's effect presets), the samples kept as Core Library references.
+  A set written by `examples/drum_kit_set.rs` opened in Live with no missing
+  samples, the 909 kit on its 16 pads, and the beat sounding.
+  `tests/set.rs` checks the kit has 16 pads, pack-relative samples and no
+  absolute path.
 
 ## Known limitations
 
-- **Drum Rack is empty.** `Instrument::Drums` inserts a Drum Rack with no
-  pads, so it is silent until a kit is dropped in. A playable default needs a
-  set saved with a kit loaded. Stock kits reference Core Library samples by an
-  absolute path in the user's Library, so those paths would have to be blanked
-  and Live left to resolve the pack-relative reference, and that needs a Live
-  check.
+- **The kit is 1.3 MB of XML** in every build that writes sets (indentation
+  already stripped), a few hundred KB once served compressed.
 - **Template says `Creator="Ableton Live 12.4.6"`.** Not checked in an older
   12.4.x.

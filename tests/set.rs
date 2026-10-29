@@ -5,7 +5,7 @@ use std::io::Read;
 
 use expressive_liveset::{
     template_tracks, with_instrument, write, Clip, Instrument, Note, Scene, Set, TimeSig, Track,
-    TEMPLATE,
+    DRUM_KIT, TEMPLATE,
 };
 use flate2::read::GzDecoder;
 use roxmltree::{Document, ParsingOptions};
@@ -388,6 +388,38 @@ fn instrument_ids_are_unique_and_pathless() {
     let p = xml.find(a).unwrap() + a.len();
     let next: u64 = xml[p..p + xml[p..].find('"').unwrap()].parse().unwrap();
     assert!(next > *ids.last().unwrap());
+}
+
+/// The drum kit plays as it opens: its 16 pads hold samples, every one found
+/// by its place in Live's Core Library, and no absolute path is left to name
+/// one machine's Live app or anyone's home folder. (The template's own Pitch
+/// rack keeps its built-in device reference, as before.)
+#[test]
+fn drum_kit_is_a_core_library_kit_with_no_absolute_paths() {
+    let d = doc(DRUM_KIT);
+    let pads = d.descendants().filter(|n| n.has_tag_name("DrumBranch")).count();
+    assert_eq!(pads, 16, "pads in the kit");
+    let value = |n: roxmltree::Node, tag: &str| {
+        n.children()
+            .find(|c| c.has_tag_name(tag))
+            .and_then(|c| c.attribute("Value"))
+            .unwrap_or("")
+            .to_string()
+    };
+    let mut samples = 0;
+    for r in d.descendants().filter(|n| n.has_tag_name("FileRef")) {
+        assert_eq!(value(r, "Path"), "", "an absolute path is left");
+        let rel = value(r, "RelativePath");
+        if rel.ends_with(".wav") || rel.ends_with(".aif") {
+            samples += 1;
+            assert_eq!(value(r, "RelativePathType"), "5", "{rel}: not pack-relative");
+            assert_eq!(value(r, "LivePackId"), "www.ableton.com/0", "{rel}: not in the Core Library");
+        }
+    }
+    assert!(samples > 16, "samples in the kit: {samples}");
+    assert!(!DRUM_KIT.contains("/Applications/") && !DRUM_KIT.contains("/Users/"));
+    let set = instrument_set(&[("Kit", Instrument::Drums)]);
+    assert!(!set.contains("/Users/"), "a home folder in the written set");
 }
 
 /// Two instruments on one block don't reuse each other's ids.

@@ -37,6 +37,12 @@ pub const TENSION: &str = include_str!("../templates/devices/tension.xml");
 /// Live's stock Drum Rack (`DrumGroupDevice`) with its default preset: an empty
 /// rack, no pads or samples. Same source as [`TENSION`].
 pub const DRUM_RACK: &str = include_str!("../templates/devices/drum-rack.xml");
+/// Live's stock 909 Core Kit: a Drum Rack with 16 pads, as Live 12.4 saved it
+/// on 2026-10-29, cleaned by `examples/clean_kit.py`. Every sample is a Core
+/// Library one, referenced only by its place in the pack (the absolute paths,
+/// which named one machine's Live app, are blank), so Live finds it in its own
+/// Core Library on any install.
+pub const DRUM_KIT: &str = include_str!("../templates/devices/drum-kit.xml");
 
 /// An instrument to put on a track, after its Pitch rack. See
 /// [`with_instrument`].
@@ -47,7 +53,8 @@ pub enum Instrument {
     None,
     /// Live's stock Tension ([`TENSION`]), default preset.
     Melodic,
-    /// Live's stock Drum Rack ([`DRUM_RACK`]), empty.
+    /// Live's stock 909 Core Kit ([`DRUM_KIT`]), so drum parts sound as the
+    /// set opens.
     Drums,
 }
 
@@ -66,7 +73,7 @@ pub fn with_instrument(
     let device = match instrument {
         Instrument::None => return Ok(track.to_string()),
         Instrument::Melodic => TENSION,
-        Instrument::Drums => DRUM_RACK,
+        Instrument::Drums => DRUM_KIT,
     };
     let anchor = "</MidiEffectGroupDevice>";
     let at = track

@@ -76,7 +76,10 @@ let kit = with_instrument(TEMPLATE, template_tracks(TEMPLATE)[0], Instrument::Dr
 ```
 
 - `Instrument::Melodic`: Live's stock Tension, default preset.
-- `Instrument::Drums`: Live's stock Drum Rack, empty (no kit loaded yet).
+- `Instrument::Drums`: Live's stock 909 Core Kit, so drum parts sound as the
+  set opens. Its samples are referenced only by their place in Live's Core
+  Library, which every install has. (`DRUM_RACK` is still there for an empty
+  Drum Rack.)
 - `Instrument::None` (the default): the block is returned unchanged, so the
   written set is byte-for-byte what it was without the call.
 
